@@ -1,0 +1,47 @@
+<head>
+  <meta charset="ISO-8859-1">
+  <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+</head>
+<body>
+  <ng-container *ngIf="allGood">
+    <form [formGroup]="form">
+      <div class = "row" >
+        <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card ">
+          <h2 class = "text-center">Add Expense</h2>
+            <div class = "card-body" >
+              <div class="form-group">
+                <label for="expense">Expense:</label>
+                <input 
+                type="text" 
+                class="form-control"
+                placeholder= "Enter expense"
+                formControlName="exp"
+                />
+              </div>
+              <div class="form-group">
+                <label>Amount:</label>
+                <input 
+                type="number" 
+                class="form-control"
+                placeholder= "Enter amount"
+                formControlName="amoun"/>
+              </div>
+                <div class="form-group">
+                <label>Description:</label> 
+                <input 
+                type="text" 
+                class="form-control"
+                placeholder= "Enter description"
+                formControlName="descr"/>
+              </div>
+              <button class="btn btn-secondary" (click)="goBack()" style="margin-right: 20px">Go Back</button>
+              <button class="btn btn-info" (click)="errorFunction()">Add Expense</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+</body>

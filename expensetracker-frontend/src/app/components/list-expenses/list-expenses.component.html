@@ -1,0 +1,39 @@
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+    </head>
+<body>
+    <nav class="navbar navbar-dark bg-dark" >
+        <form class="form-inline" action="/action_page.php">
+            <button id="button-expenses" type="button" class="btn btn-info"  routerLink="/addexpense" style="margin-left:8em; margin-right:2em;">Add Expense</button>
+            <input class="form-control mr-sm-2"
+            type="text" 
+            id="keyword"
+            [(ngModel)]="filters.keyword"
+            name="keyword">
+           <button class="btn btn-info"  type="submit" (click)="listExpenses()" style="margin-right: 6em">Search</button>
+           <label style="color:white">Total Amount: {{totalExpenses}}</label>
+        </form>
+    </nav>
+
+    <div class = "container">
+        <table class = "table table-striped table-bordered" >
+
+        <tr>
+            <th>Expense</th>
+            <th>Amount</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor ="let expense of expenses">
+            <td>{{expense.expense}}</td>
+            <td>{{expense.amount | currency: '&euro;'}}</td>
+            <td>  <button type="button" class="btn btn-info" routerLink ="/editexpense/{{expense.id}}" style="margin-right: 20px">Edit</button>
+                <button  type="button" class="btn btn-danger" *ngIf="expense.id" (click)="deleteExpense(expense.id!)" >Delete</button>
+            </td>  
+        </tr>
+        </table>
+    </div>
+</body>
