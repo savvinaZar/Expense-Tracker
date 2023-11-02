@@ -4,7 +4,7 @@ Created an expense tracker web application using Angular,Java and Spring Framewo
 Αρχικα δημιούργησα τη βάση μου μέσω cmd ακολουθώντας τις παρακάτω εντολές:
 1)cd C:\Program Files\MySQL
 2)dir
-3)cd  MySQL Workbench 8.0
+3)cd  MySQL Server 8.0
 4)cd bin
 5)mysql -u newuser -p(μετά έβαλα το password:password)
 6)create database expensetrackers;
